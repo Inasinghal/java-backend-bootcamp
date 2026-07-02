@@ -21,3 +21,20 @@ Recursion
 A function in Java can call itself. Such calling of function by itself is called recursion
 Example: Factorial of a number
 factorial (n) = n * factorial(n-1)
+
+emory Allocation of Methods
+When you call:
+
+getGrade(85);
+Execution:
+
+main()
+↓
+getGrade()
+↓
+returns value
+Key Insight:
+
+Each method runs in Stack Memory
+Each call creates a stack frame
+Removed after execution
