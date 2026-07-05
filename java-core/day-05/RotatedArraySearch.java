@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class RotatedArraySearch {
     public static void main(String args[]) {
-         Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.println("Enter elements separated by space");
         String line = sc.nextLine();
         String[] tokens = line.trim().split(" ");// Initialize the array's/

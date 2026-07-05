@@ -1948,3 +1948,94 @@ Lower Bound: Save answer, move left when arr[mid] >= target.
 Upper Bound: Save answer, move left when arr[mid] > target.
 Floor Algorithm: Save answer(value), move right when arr[mid] <= target
 Ceil Alogirthm: same as lower bound but retruuns value
+
+8. Search Insert Position
+
+If target exists
+
+Return index.
+
+Else
+
+Return the position where it should be inserted.
+
+9. Rotated Sorted Array Search
+
+Observation
+
+One half is always sorted.
+
+Steps
+
+Find sorted half.
+
+Check if target belongs there.
+
+Search accordingly.
+10. Find Minimum in Rotated Array
+
+Observation
+
+Minimum lies in the unsorted half.
+
+If left half is sorted
+
+Minimum = left element
+
+Search right.
+
+Else
+
+Search left.
+11. Rotation Count
+
+Rotation count equals the index of the minimum element.
+
+Example
+
+4 5 6 7 1 2 3
+
+Minimum = 1
+
+Index = 4
+
+Rotated 4 times.
+12. Search in Rotated Array with Duplicates
+
+Extra condition
+
+if(nums[low] == nums[mid] && nums[mid] == nums[high]){
+    low++;
+    high--;
+}
+
+This removes ambiguity caused by duplicates.
+
+Binary Search Pattern
+low
+high
+mid
+
+↓
+
+Find sorted half
+
+↓
+
+Discard half
+
+↓
+
+Repeat
+Binary Search Complexity Summary
+Problem	Complexity
+Binary Search	O(log n)
+First Occurrence	O(log n)
+Last Occurrence	O(log n)
+Count Occurrences	O(log n)
+Lower Bound	O(log n)
+Upper Bound	O(log n)
+Search Insert Position	O(log n)
+Rotated Search	O(log n)
+Find Minimum	O(log n)
+Rotation Count	O(log n)
