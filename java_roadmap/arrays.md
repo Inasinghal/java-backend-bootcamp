@@ -234,15 +234,15 @@ Minimum Window
 
 ## Two Pointers
 
-Move Zeroes
+Move Zeroes - done
 
-Remove Duplicates
+Remove Duplicates -done
 
-Container With Most Water
+Container With Most Water-done
 
-Pair Sum
+Pair Sum-done
 
-Merge Sorted Arrays
+Merge Sorted Arrays-done
 
 ---
 
