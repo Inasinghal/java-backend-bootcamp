@@ -278,3 +278,191 @@ Use nextLine() to read a full string/line.
 Use next().charAt(0) to read a single character.
 Always close the Scanner object after use.
 Scanner reads input as tokens (words separated by spaces). Example: "How are you" -> "How", "are", "you".
+
+Until now, you’ve learned:
+
+What variables are
+What data types are
+How numbers are stored in memory
+But one big question is still unanswered:
+
+Where is all this data actually stored?
+
+Why does String behave differently from int?
+
+What does “reference” really mean?
+
+This blog will connect everything together.
+
+Two Types of Memory in Java
+
+Java uses two main memory areas, both managed by JVM:
+
+Stack Memory
+Heap Memory
+Stack Memory (Simple Understanding)
+Think of stack as a fast, temporary workspace.
+
+It:
+
+Stores local variables
+Stores primitive values directly
+Stores references (addresses) of objects
+Works in LIFO (Last In First Out) order
+Is automatically cleaned when scope ends
+Important: When a method finishes, all its variables are removed automatically.
+
+Error: If stack memory is full → StackOverflowError
+
+Heap Memory (Simple Understanding)
+Think of heap as a big storage area for objects
+
+It:
+
+Stores objects
+Has larger memory
+Does not follow strict order
+What Is a Reference?
+
+This is the most important concept.
+
+A reference is simply:
+an address pointing to the actual object in memory
+
+Example:
+
+String name = "Ayush";
+Think like this:
+
+Stack        Heap
+-----        -----
+name  -----> "Ayush"
+        (0x123)
+name does NOT store "Ayush"
+It stores the address of "Ayush"
+
+Final Understanding
+
+Primitive → stores value directly
+Reference → stores address of value
+String Is Special
+
+You might think:
+
+String name = "Ayush";
+Looks like a normal variable…
+
+But it’s NOT
+
+Important:
+
+String is a class, not a primitive
+What Does Immutable Mean?
+Once created, a String cannot be changed
+
+Example:
+
+String s = "Hello"; 
+s = s + " World";
+You might think:
+“Hello becomes Hello World”
+
+But actually:
+
+“Hello” → stays as it is and
+New object → “Hello World” is created
+Before:
+s → "Hello"
+
+After:
+s → "Hello World"
+(old "Hello" still exists in memory)
+Why Java Made String Immutable?
+
+Simple reasons:
+
+Security
+Performance
+Thread safety
+You don’t need to go deep now — just remember:
+String never changes, it always creates new objects
+
+String Constant Pool (Very Important)
+
+Java optimizes memory using something called: String Constant Pool where string literals are stored.
+
+Example:
+
+String a = "Java";
+String b = "Java";
+Only ONE "Java" is created in memory
+
+a → "Java" // "Java" is string literals
+b → "Java"
+Both point to same object
+
+But Look at This:
+
+String c = new String("Java"); //this is not literal
+This creates a new object in heap
+
+Now memory has:
+
+One "Java" in pool
+One "Java" in heap
+Why This Matters
+
+Saves memory
+Explains how Java optimizes performance
+
+Let’s understand with an example:
+
+public class MemoryManage {
+   public static void main(String args[]) {
+      int primitiveVariable = 10; //primitive data type
+      Person personObj = new Person();  //object
+      String stringLiteral = "24";  //string literal
+      MemoryManage memObj = new MemoryManage(); //creating object
+      memObj.testMemoryManagement(personObj);
+   }
+   
+   private void testMemoryManagement(Person Person)  {
+      Person personObj2 = userObj;
+      String stringLiteral2 = "24";
+      String stringLiteral3 = new String("24");
+   }
+}
+So, we have a simple class with various types of data is stored.
+Now let’s create memory for it.
+
+Press enter or click to view image in full size
+
+Now as soon as we encounter the closing bracket of testMemoryManagement method, its scope ends, it will delete its
+scope so all of the upper portion of stack gets deleted (in LIFO Order).
+
+Press enter or click to view image in full size
+
+Now control comes back to main() method. Since nothing is there after calling testMemoryManagement() method, we encounter the
+closing brocket which means the scope of main ends it’s portion
+in stack begins to be deleted in LIFO Order
+
+Press enter or click to view image in full size
+
+Now the stack is cleared & all the references are deleted but the objects are still there in the heap.
+
+If objects stay in heap even after references are gone…
+Who cleans them?
+
+👉 That’s where Garbage Collection comes in.
+
+Final Thought
+
+You don’t need to remember everything.
+
+Just remember:
+
+Primitive = value
+Reference = address
+String = immutable
+
+That’s enough to think like a developer.
