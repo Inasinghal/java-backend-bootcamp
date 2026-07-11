@@ -476,3 +476,21 @@ Constructor Execution
 ↓
 
 Reference Assignment
+
+
+
+inal Memory Rule (Remember This)
+When Class Loads
+Class Loading
+      |
+      ↓
+Method Area / Metaspace
+
+Class Blueprint
+----------------
+✔ Class information
+✔ Methods
+✔ Static variables
+✔ Constant Pool
+
+❌ Instance variables are NOT created

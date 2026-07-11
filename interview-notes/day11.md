@@ -60,3 +60,21 @@ Answer: Local variables are stored in the Stack and must be explicitly initializ
 Q12. Why is understanding JVM memory important for Spring Boot?
 
 Answer: Spring Boot creates and manages many objects (beans). Understanding where classes, objects, static variables, and references live helps explain bean creation, dependency injection, object lifecycle, memory usage, and garbage collection.
+
+"Where are instance variables stored?"
+
+Answer:
+
+Instance variables are stored inside objects in Heap memory. The class only contains information about those variables as part of its blueprint.
+
+"Where are static variables stored?"
+
+Answer:
+
+Static variables belong to the class and are stored with class metadata in Method Area/Metaspace.
+
+"What is stored in Method Area?"
+
+Answer:
+
+Method Area stores class-level information such as class metadata, method bytecode, static variables, and runtime constant pool.
