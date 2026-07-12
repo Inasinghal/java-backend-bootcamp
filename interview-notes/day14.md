@@ -356,3 +356,23 @@ Spring Boot uses interfaces to achieve loose coupling, dependency injection, run
 
 ---
 
+"An abstract class is used when related classes share common state and implementation. It can contain constructors, instance variables, abstract methods, and concrete methods. It provides partial implementation and serves as a base class.
+
+An interface defines a contract that unrelated classes can implement. It supports multiple inheritance of type, and from Java 8 onward, it can contain default and static methods. All interface variables are implicitly public static final.
+
+I would use an abstract class for a Vehicle hierarchy because all vehicles share common properties and behavior. I would use an interface like Flyable or Payment because different unrelated classes can provide their own implementation while following the same contract."
+
+---
+
+### Suppose an interface has a default method, and a superclass also has a concrete method with the same signature.
+
+### Which method will be executed, and why?
+
+Java follows the rule:
+
+Class wins over interface.
+
+If a superclass provides a concrete implementation and an interface provides a default method with the same signature, the superclass method is inherited.
+
+The interface's default method is ignored in this case.
+

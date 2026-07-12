@@ -1253,6 +1253,8 @@ Instead of returning immediately, continue traversing the array and record every
 
 `==` compares object references (memory addresses), whereas `.equals()` compares the actual contents of the String. Therefore, String values should always be compared using `.equals()`.
 
+equals() is available for all Java objects. By default, it compares object references (via Object.equals()), but many classes such as String override it to compare object content. We also override it in our own classes to define logical equality.
+
 ---
 
 # 16. Is Linear Search a stable algorithm?

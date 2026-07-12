@@ -47,23 +47,20 @@ This concept is known as **"Write Once, Run Anywhere (WORA)."**
 
 ## 3. Difference between JDK, JRE, and JVM
 
-### JVM (Java Virtual Machine)
-
-The JVM is responsible for running Java bytecode. It manages memory, performs garbage collection, loads classes, executes bytecode, and converts it into machine code.
+### JDK (Java Development Kit)
+Used to develop Java applications. It contains the JRE along with development tools such as the Java compiler (javac), debugger, and documentation tools.
 
 ### JRE (Java Runtime Environment)
+Provides everything needed to run Java applications. It includes the JVM and the core Java libraries but does not include development tools.
 
-The JRE contains the JVM and the required libraries needed to run Java applications. It cannot compile Java code.
+### JVM (Java Virtual Machine) 
+Responsible for executing Java bytecode. It loads classes, verifies bytecode, manages memory, performs garbage collection, and uses the JIT compiler to convert platform-independent bytecode into machine-specific native code for execution.
 
-### JDK (Java Development Kit)
+### The execution flow is:
 
-The JDK contains everything needed for Java development, including the JRE, JVM, Java compiler (`javac`), debugger, and other development tools.
+.java → javac → .class (bytecode) → JVM → native machine code.
 
-**Simple Analogy**
-
-* JVM = Engine
-* JRE = Engine + Fuel
-* JDK = Complete Car Factory
+A simple analogy is that the JDK is a complete workshop with all the tools to build a product, the JRE is the environment needed to use the product, and the JVM is the engine that actually runs it.
 
 As developers, we install the JDK because it already contains the JRE and JVM.
 
@@ -79,7 +76,17 @@ This intermediate representation is what makes Java platform-independent.
 
 ---
 
-## 5. What happens when a Java program runs?
+## 5. How does Java achieve platform independence even though the JVM itself is platform dependent?
+
+Java achieves platform independence because the Java compiler (javac) converts source code into platform-independent bytecode (.class files). This bytecode is the same regardless of the operating system.
+
+Each operating system has its own JVM implementation. The JVM reads the same bytecode and interprets or JIT-compiles it into native machine code specific to that operating system and processor.
+
+Therefore, the application is written and compiled once, but it can run on any platform that has a compatible JVM. This is why Java follows the principle of 'Write Once, Run Anywhere.
+
+---
+
+## 6. What happens when a Java program runs?
 
 When a Java program runs, the following steps occur:
 
@@ -97,7 +104,7 @@ This execution flow is a favorite interview topic because it tests understanding
 
 ---
 
-## 6. Why is `main()` static?
+## 7. Why is `main()` static?
 
 The `main()` method is static so that the JVM can call it without creating an object of the class.
 
@@ -107,7 +114,7 @@ Making `main()` static allows the JVM to invoke it directly as the application's
 
 ---
 
-## 7. Primitive vs Reference Types
+## 8. Primitive vs Reference Types
 
 ### Primitive Types
 
@@ -159,7 +166,7 @@ Reference variables hold addresses pointing to objects.
 
 ---
 
-## 8. What is Type Casting?
+## 9. What is Type Casting?
 
 Type casting is the process of converting one data type into another.
 
@@ -197,7 +204,7 @@ The decimal part is lost because narrowing conversion may lose data.
 
 ---
 
-## 9. Difference between `float` and `double`
+## 10. Difference between `float` and `double`
 
 | Feature     | float                | double                         |
 | ----------- | -------------------- | ------------------------------ |
@@ -217,7 +224,7 @@ In most Java applications, `double` is preferred because of its higher precision
 
 ---
 
-## 10. Why is Java suitable for backend development?
+## 11. Why is Java suitable for backend development?
 
 Java is widely used for backend development because it offers:
 
