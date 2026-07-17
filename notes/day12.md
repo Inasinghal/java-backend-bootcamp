@@ -1,4 +1,60 @@
-# Topic: Inheritance, Constructor Chaining, Method Overriding & Runtime Polymorphism
+# Topic: Encapsulation, Inheritance, Constructor Chaining, Method Overriding & Runtime Polymorphism
+
+# Encapsulation
+
+Problem Before Encapsulation
+
+Suppose we have
+
+class BankAccount {
+
+    String accountNumber;
+    double balance;
+
+}
+
+Now
+
+BankAccount account = new BankAccount();
+
+account.balance = -100000;
+
+# Can someone directly modify the balance?
+
+Yes.
+
+# Can someone assign account.accountNumber = null;
+
+Yes.
+
+There is no control over the data.
+
+# Problems
+Data is exposed.
+Invalid values can be assigned.
+No validation.
+Business rules can be violated.
+Difficult to maintain.
+
+# Java's Solution
+
+Hide the data by Making variables private
+
+But then...
+
+How do we access it?
+
+Java introduced getters, setters
+
+---
+
+Initially, Java introduced classes to group related data and behavior together. However, object data was still directly accessible, allowing any part of the application to modify it with invalid values, which could violate business rules and leave objects in an inconsistent state. To solve this, Java introduced encapsulation. By making data private, direct access is restricted, and controlled access is provided through methods where business validations can be applied. This ensures that an object's state remains valid, improves maintainability, and protects data integrity.
+
+---
+
+Encapsulation is the process of binding data and the methods that operate on that data into a single unit (class) while restricting direct access to the data using access modifiers and providing controlled access through methods.
+
+
 
 ---
 
@@ -86,6 +142,10 @@ class Manager extends Employee{}
 
 class Developer extends Employee{}
 ```
+
+---
+
+Initially, multiple classes contained the same repeated code, making applications difficult to maintain because any common logic had to be updated in several places. To solve this, Java introduced inheritance, allowing common properties and methods to be placed in a parent class and reused by multiple child classes, reducing code duplication and improving maintainability. However, inheritance also introduced a limitation: child classes inherited all accessible members of the parent, even when some behaviors were not applicable. This could lead to incorrect inheritance hierarchies and violations of object-oriented design principles. To provide different implementations for common behavior, Java introduced runtime polymorphism through method overriding. Later, abstraction, interfaces, and composition further improved flexibility by allowing developers to expose only the required behavior and avoid unnecessary inheritance.
 
 ---
 

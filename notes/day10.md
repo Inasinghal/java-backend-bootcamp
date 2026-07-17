@@ -4,6 +4,10 @@
 
 ---
 
+Initially, applications were developed using Procedural Programming, where data and functions were separate, and functions directly operated on shared data. As applications became larger, this approach became difficult to maintain, reuse, secure, and extend because there was no proper way to group related data and behavior. To solve this, Java introduced Classes, which group related properties and methods together and act as a blueprint for creating objects. A class itself does not occupy heap memory until an object is created. An object is a runtime instance of a class with its own state and behavior. During object creation, the JVM loads the class if required, allocates memory for the object in the heap, initializes instance variables with default values, executes the constructor, and finally stores the object's reference in a reference variable on the stack.
+
+---
+
 # 1. Object-Oriented Programming (OOP)
 
 ### What is OOP?
@@ -485,7 +489,7 @@ This removes ambiguity completely
 
 Why it cannot be inherited?
 
-Because if it is inherited from parent class, then this will not be treated as a constructor because it has name same as parent class which is not same as child class name. So now it will be treated as a method and you have to define a return type also.
+Constructors are responsible for initializing an object's state during its creation. Unlike normal methods, constructors are tied to the specific class whose object is being created. A child object should initialize its own state using its own constructor, while Java automatically invokes the parent constructor using super() to initialize the inherited part of the object. Since the parent's state is already initialized through constructor chaining, inheriting constructors would be unnecessary and could also create ambiguity about which constructor should initialize which part of the object. Therefore, constructors are not inherited.
 
 Why constructor cannot be final ?
 
@@ -563,9 +567,15 @@ class Singleton {
     static Singleton getInstance() {
         return new Singleton();
     }
-Used in:
 
-Singleton Design Pattern
+Advantages:
+
+Can validate before creating the object.
+Can cache and return an existing object.
+Can return different implementations.
+Can implement Singleton.
+Hides object creation from the caller.
+
 
 Constructor Chaining
 It means that we can call one constructor in other constructor. This is done using this() & Super(). To chain a constructor within the same class , this() is used.
