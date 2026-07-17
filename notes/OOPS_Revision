@@ -1,0 +1,76 @@
+Procedural Programming
+        │
+        ▼
+Problem:
+Data and functions were separate.
+Code became difficult to maintain.
+
+        │
+        ▼
+Java introduced Classes & Objects
+(Group related data and behavior)
+
+        │
+        ▼
+Problem:
+Anyone could directly modify object data.
+
+        │
+        ▼
+Java introduced Encapsulation
+(private + controlled access + business rules)
+
+        │
+        ▼
+Problem:
+Same code was repeated across multiple classes.
+
+        │
+        ▼
+Java introduced Inheritance
+(Code Reuse)
+
+        │
+        ▼
+Problem:
+Different child classes needed different implementations.
+
+        │
+        ▼
+Java introduced Polymorphism
+(Method Overriding + Dynamic Method Dispatch)
+
+        │
+        ▼
+Problem:
+Overriding was optional.
+Developers could forget to implement important methods.
+
+        │
+        ▼
+Java introduced Abstraction
+(Mandatory implementation using abstract methods)
+
+        │
+        ▼
+Problem:
+A class could inherit from only one class.
+Many capabilities needed to be mixed together.
+
+        │
+        ▼
+Java introduced Interfaces
+(Multiple inheritance of behavior + contracts)
+
+        │
+        ▼
+Problem:
+Large projects became tightly coupled.
+
+        │
+        ▼
+SOLID Principles
+        │
+        ▼
+Spring Boot
+(Dependency Injection, IoC, Interfaces, Composition)

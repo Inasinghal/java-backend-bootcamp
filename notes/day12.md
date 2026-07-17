@@ -508,6 +508,8 @@ Creates new method accidentally.
 
 ## Interview Question
 
+Inheritance allowed child classes to reuse common behavior from a parent class, but different child classes often required different implementations of the same behavior. To solve this, Java introduced polymorphism, allowing child classes to override inherited methods and provide their own implementations. Compile-time polymorphism is achieved through method overloading, where the compiler selects the appropriate method based on the method signature. Runtime polymorphism is achieved through method overriding, where the JVM decides which implementation to execute based on the actual object type at runtime. However, polymorphism still allowed child classes to inherit a default implementation without overriding it. For behaviors that must be implemented by every child class, Java introduced abstraction using abstract classes and abstract methods.
+
 Does @Override change runtime behavior?
 
 Answer
@@ -556,7 +558,11 @@ Runtime chooses Dog implementation.
 
 # Interview Definition
 
+
+
 Runtime polymorphism means method execution depends on the actual object at runtime rather than the reference type.
+
+During compilation, the compiler only verifies that the reference type (Animal) contains the sound() method. At runtime, the object created on the heap is a Dog. The JVM uses Dynamic Method Dispatch, which looks at the actual object's type and invokes the overridden method from Dog instead of the parent's implementation.
 
 ---
 
@@ -742,5 +748,15 @@ Only one object.
 Reference may be Parent.
 
 Object may be Child.
+
+---
+
+During Child object creation, Java follows this order:
+
+Memory is allocated for the complete Child object.
+Instance fields receive default values.
+The parent constructor executes.
+Child instance fields are initialized.
+The child constructor body executes.
 
 ---
